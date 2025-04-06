@@ -1,1 +1,2 @@
 Generate/venv/lib/python3.11/site-packages/cv2/cv2.abi3.so filter=lfs diff=lfs merge=lfs -text
+Validate/venv/lib/python3.11/site-packages/cv2/cv2.abi3.so filter=lfs diff=lfs merge=lfs -text
