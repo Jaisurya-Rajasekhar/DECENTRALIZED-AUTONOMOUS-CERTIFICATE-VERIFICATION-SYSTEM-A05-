@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Certificate Generator</title>
+    <style>
+        /* Make sure the html and body fill the viewport */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        /* Body styling for the full-width background image */
+        body {
+            background-image: url('static/detective.jpg'); /* Path to your background image */
+            background-size: cover; /* Ensure the image covers the entire viewport */
+            background-repeat: no-repeat; /* Prevent tiling */
+            background-position: center; /* Center the image */
+            background-attachment: fixed; /* Make the background fixed for a parallax effect */
+            font-family: Arial, sans-serif;
+            color: white; /* Adjust text color for readability */
+            background-color: #000; /* Fallback color in case the image doesn't load */
+        }
+
+        header {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: white; /* Text color for better contrast on the dark background */
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 0;
+        }
+
+        .input-container {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: white; /* Ensure form labels are visible on the dark background */
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #downloadButton {
+            margin-top: 10px;
+            background-color: #28a745;
+        }
+
+        #downloadButton:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>DECENTRALIZED DOCUMENT VERIFICATION SYSTEM</h1>
+        <h2>Generate your Certificate here</h2>
+    </header>
+
+    <div class="input-container">
+        <label for="name">Enter Name :</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+        <br><br>
+
+        <label for="email">Enter Email :</label>
+        <input type="text" id="email" placeholder="Enter your email here">
+        <br><br>
+
+        <label for="phnumber">Enter Contact Number :</label>
+        <input type="number" id="phnumber" placeholder="Enter your contact number here">
+        <br><br>
+
+        <label for="coursename">Enter Course Name :</label>
+        <input type="text" id="coursename" placeholder="Type your course name here">
+        <br><br>
+
+        <label for="courseid">Enter Course Id :</label>
+        <input type="text" id="courseid" placeholder="Type your course id here">
+        <br><br>
+
+        <label for="instname">Enter Institute Name and City :</label>
+        <input type="text" id="instname" placeholder="Enter name city here">
+        <br><br>
+
+        <label for="startdate">Enter Course Start Date :</label>
+        <input type="date" id="startdate" placeholder="Enter the start date here">
+        <br><br>
+
+        <label for="enddate">Enter Course Completion Date :</label>
+        <input type="date" id="enddate" placeholder="Enter the end date here">
+        <br><br>
+
+        <button onclick="generateCertificate()">Generate Now</button>
+    </div>
+
+    <a id="downloadLink" style="display: none;" download="Certificate.png">
+        <button id="downloadButton">Download Certificate</button>
+    </a>
+
+    <canvas id="certificateCanvas" style="display: none;"></canvas>
+
+    <script src="static/script.js"></script>
+</body>
+
+</html>
